@@ -14,3 +14,25 @@ a .py file (`simplemakeusers.py`... it's older brother `makeusers.py` was a flop
 that would generate the information. It wasn't as simple as creating and running a .py 
 from the terminal, as it had to be [run with app context](https://stackoverflow.com/questions/46540664/no-application-found-either-work-inside-a-view-function-or-push-an-application/46541219#46541219). 
 There's a more [official way](https://flask.palletsprojects.com/en/1.1.x/cli/#custom-commands) of getting this done that I seek to understand soon.
+
+## 12 Nov 2019
+
+I implemented tweepy and successfully setup the twitter developer account to incorporate
+actual use data into the flask app. I also managed to find another, still not ideal,
+way of running a .py code in the flask shell to avoid typing everything out each time.
+Instead of running with context, I just write the script (ex. myscript.py) then use
+python's exec function: `exec(open('./mscripy.py').read())`
+
+Today was also a bit slow and I"m still not so sure what is going on with much of the
+inner workings of flask.
+
+I ran into several issues throughout mostly all due to very tiny syntax errors:
+- in one instance, I stored the user as a class user, but the name of the user was an
+attribute, but I set it as the class. My peers pointed it out so I fixed it and was
+able to move on (Error was an Interface error - likely caused by an unsupported type
+(i.e. non-string)
+- The other instance was very silly and not caught by the interpreter. The number of
+tweets being returned was 1-5. All I needed to do was specify `count=200` instead of
+`counts=200`. even after fixing this, the number of tweets returned are around
+20-30. Presumably this is now just returning the first page of the user's twitter account
+
