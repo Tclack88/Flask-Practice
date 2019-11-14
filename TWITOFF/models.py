@@ -17,7 +17,7 @@ class User(DB.Model):
 class Tweet(DB.Model):
     """The user's tweets from twitter"""
     id = DB.Column(DB.BigInteger, primary_key=True)
-    text = DB.Column(DB.Unicode(280)) # max tweet length allowed by twitter (280 chars)
+    text = DB.Column(DB.Unicode(500)) # more than 280 chars is allowed for links
     embedding = DB.Column(DB.PickleType, nullable=False)
     user_id = DB.Column(DB.BigInteger, DB.ForeignKey('user.id'), nullable=False)
     user = DB.relationship('User',backref=DB.backref('tweets',lazy=True))

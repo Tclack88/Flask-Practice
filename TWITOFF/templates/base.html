@@ -2,21 +2,33 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Twitoff - {{ title }} </title>
+    <link rel="stylesheet" href="https://unpkg.com/picnic">
+    <title>Twitoff - {{ title }}</title>
   </head>
   <body>
-    <h1>Twitoff Rules!</h1>
-    <p> Content goes here ...</p>
-    <ul>
-      {% for user in users %}
-      <li> {{user.id}} - {{ user.name }} </li>
-        <hr>
-        {% for tweet in user.tweets %}
-        <li>
-          {{ tweet.text }}<br>
-        </li>
-        {% endfor %}
-      {% endfor %}
-    </ul>
+	  <h1><a href='/'>Twitoff!</a></h1>
+
+    {% block content %}
+    <form action="/user" method="post">
+      <input type="text" name="user_name" placeholder="User to add">
+      <input type="submit" value="Add User">
+    </form>
+
+
+      <form  action="/compare" method="post">
+        <select  name="user1">
+          {% for user in users %}
+          <option value="{{ user.name }}">{{ user.name }}</option>
+          {% endfor %}
+        </select>
+        <select  name="user2">
+          {% for user in users %}
+          <option value="{{ user.name }}">{{ user.name }}</option>
+          {% endfor %}
+        </select>
+        <input type="text" name="tweet_text" placeholder="Tweet text to predict">
+        <input type="submit" value="Compare Users">
+      </form>
+    {% endblock %}
   </body>
 </html>

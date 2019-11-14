@@ -36,3 +36,14 @@ tweets being returned was 1-5. All I needed to do was specify `count=200` instea
 `counts=200`. even after fixing this, the number of tweets returned are around
 20-30. Presumably this is now just returning the first page of the user's twitter account
 
+## 13 Nov 2019
+Successfully implemented predictions and a comparator for multiple users loaded into
+the database. I also created distinct HTML forms based on the event of adding a user
+or comparing two users with a prediction
+
+The most interesting and challenging part were one in the same: formatting the html code
+based on the data (selections, users uploaded, etc.). Though I haven't done any CSS
+styling, I spent a lot of time thinking about the logic of the code and all the
+app decorators that are controlling what is posted and what is requested. Jinja calls
+for creating HTML with python also feel complex to me at the moment, especially the html
+pages which inherit from the base/home file
