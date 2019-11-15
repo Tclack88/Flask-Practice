@@ -33,7 +33,7 @@ able to move on (Error was an Interface error - likely caused by an unsupported 
 (i.e. non-string)
 - The other instance was very silly and not caught by the interpreter. The number of
 tweets being returned was 1-5. All I needed to do was specify `count=200` instead of
-`counts=200`. even after fixing this, the number of tweets returned are around
+`counts=200`. Even after fixing this, the number of tweets returned are around
 20-30. Presumably this is now just returning the first page of the user's twitter account
 
 ## 13 Nov 2019
@@ -47,3 +47,15 @@ styling, I spent a lot of time thinking about the logic of the code and all the
 app decorators that are controlling what is posted and what is requested. Jinja calls
 for creating HTML with python also feel complex to me at the moment, especially the html
 pages which inherit from the base/home file
+
+## 14 Nov 2019
+Successfully deployed the webapp to heroku which at present can be found
+[here](https://twitoff-tclack88.herokuapp.com/). It's still very bare bones in terms
+of CSS styling, but that wasn't the focus and I needed to spend more time focusing
+on the logic of the app.
+
+Nothing was particularly challenging as this is not the first app on heroku I've
+[deployed](https://us-power-plants.herokuapp.com/). So I managed to get it done very
+quickly. In order to continue practicing I've made a local flask app which is simply
+a button that when pressed will scrape a paragraph from a random Wikipedia article 
+and another which will translate text into Morse code (visually, not audibly).
