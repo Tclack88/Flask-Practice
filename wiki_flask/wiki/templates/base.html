@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Random Wiki</title>
+  </head>
+  <body>
+    <h1><a href="/">Random Wiki</a></h1>
+    <form action="/generated" method="get">
+      <input type="submit" name="generate_wiki" value="Click to genrate random wikipedia paragraph!">
+    </form>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

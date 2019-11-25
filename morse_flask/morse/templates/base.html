@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Morse Translator</title>
+  </head>
+  <body>
+    <h1>Morse Translator</h1>
+    <p>Enter a word, phrase, jibberish, etc. to be translated into morse code!</p>
+    <form  action="/translate" method="post">
+      <input type="text" name="original" placeholder="Enter text to be translated!">
+      <input type="submit" value="Translate!">
+    </form>
+    {% block content %}
+    {% endblock %}
+
+  </body>
+</html>
